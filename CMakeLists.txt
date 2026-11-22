@@ -14,8 +14,8 @@ else()
 	target_link_options(performance_hud PRIVATE -static)
 endif()
 
-# Output the add-on to the project root.
-set(ADDON_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+# Output the add-on to the out/ build folder.
+set(ADDON_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/out")
 
 set_target_properties(performance_hud PROPERTIES
 	OUTPUT_NAME "PerformanceHUD"

@@ -34,7 +34,7 @@ different corner; `HudPosY` adjusts the vertical offset in pixels.
 ## Building
 
 The primary build is `./build.sh`, which cross-compiles with `llvm-mingw` and
-writes `PerformanceHUD.addon64` to the project root:
+writes `out/PerformanceHUD.addon64`:
 
 ```sh
 ./build.sh

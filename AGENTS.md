@@ -12,11 +12,11 @@ over a rolling 10 second window.
 ## Layout
 
 ```
-CMakeLists.txt              CMake build (optional; outputs to project root)
+CMakeLists.txt              CMake build (optional; outputs to out/)
 build.sh                    Primary build: cross-compiles with llvm-mingw
 include/                    Vendored ReShade + Dear ImGui headers (do not edit)
 src/performance_hud.cpp     Entire add-on implementation
-PerformanceHUD.addon64      Build artifact (created in the project root)
+out/PerformanceHUD.addon64  Build artifact (created in out/)
 ```
 
 ## Build
@@ -32,12 +32,12 @@ The primary build is `./build.sh`. It uses `llvm-mingw`:
 ./build.sh
 ```
 
-The result is `PerformanceHUD.addon64` in the project root. The build is a
-Windows x86-64 DLL; it cannot be executed on Linux. Success is measured by the
-compiler exiting zero.
+The result is `out/PerformanceHUD.addon64`. The build is a Windows x86-64 DLL;
+it cannot be executed on Linux. Success is measured by the compiler exiting
+zero.
 
 CMake is also supported (`cmake -B build && cmake --build build`) and writes to
-the project root, but `cmake` may not be installed; prefer `build.sh`.
+`out/`, but `cmake` may not be installed; prefer `build.sh`.
 
 Warnings from `include/reshade_*.hpp` about `unknown attribute 'novtable'` are
 expected under clang and are not caused by project code.

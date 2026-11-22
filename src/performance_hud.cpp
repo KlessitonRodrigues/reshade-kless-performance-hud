@@ -906,10 +906,10 @@ static const ImVec4 level_color(int level)
 	return base_color();
 }
 
-// Single-column layout: every line is "value label", e.g. "60% cpu".
+// Single-column layout: every value is padded to 5 characters, e.g. "10%  cpu".
 static void draw_metric_line(const ImVec4 &color, const char *value, const char *label)
 {
-	ImGui::TextColored(color, "%s %s", value, label);
+	ImGui::TextColored(color, "%-5s%s", value, label);
 }
 
 static void draw_metric_placeholder(const char *label)

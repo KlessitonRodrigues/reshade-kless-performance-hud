@@ -28,8 +28,8 @@ fi
 
 MINGW_PREFIX="${MINGW_PREFIX:-x86_64-w64-mingw32}"
 
-# Output the add-on to the project root.
-OUT_DIR="$(pwd)"
+# Output the add-on to the out/ build folder.
+OUT_DIR="$(pwd)/out"
 mkdir -p "$OUT_DIR"
 
 "$MINGW_PREFIX-clang++" -O2 -std=c++20 -shared \
